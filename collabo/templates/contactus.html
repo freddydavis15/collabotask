@@ -1,0 +1,17 @@
+<html>
+
+<form action="add" method="get">
+    {% csrf_token %}
+    <label>NAME</label><input type="text" placeholder="enter your name" name="Name"><br>
+    <label>MESSAGE</label><input type="text" placeholder="enter your address" name="Message"><br>
+    <label>EMAIL</label><input type="email" placeholder="enter your mail" name="mailID">
+    <input type="submit" name="addd" placeholder="submit" >
+</form>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+</html>
